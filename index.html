@@ -321,5 +321,48 @@ int main() {
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Time Access Page</title>
+    <style>
+        /* Simple styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #content {
+            display: none;
+        }
+        #message {
+            color: red;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            // Check if the user has already accessed the page
+            if (localStorage.getItem("accessed")) {
+                // Show the message if already accessed
+                document.getElementById("message").innerHTML = "You have already accessed this page.";
+            } else {
+                // Allow access for the first time
+                document.getElementById("content").style.display = "block";
+                localStorage.setItem("accessed", true);  // Mark the page as accessed
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="content">
+        <h1>Welcome to the One-Time Access Page</h1>
+        <p>This content is available only on your first visit.</p>
+    </div>
+    <p id="message"></p>
+</body>
+</html>
+
+
 
                     
