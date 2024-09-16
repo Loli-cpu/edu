@@ -217,6 +217,41 @@
         <footer>
             &copy; 2024 | The History of Programming by Your Name
         </footer>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Paste Disabled</title>
+    <style>
+        /* Disable text selection */
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+    <script>
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // Disable Ctrl+C and other key combinations for copying
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'x' || e.key === 'a')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>Content is Protected</h1>
+    <p>This text cannot be copied or pasted.</p>
+</body>
+</html>
+
     
     </body>
     </html>
