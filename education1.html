@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Languages and Their Authors</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            transition: transform 0.3s;
+        }
+        .container:hover {
+            transform: translateY(-5px);
+        }
+        h1 {
+            text-align: center;
+            color: #2980b9;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #e9ecef;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        li:hover {
+            background-color: #dcdcdc;
+            transform: scale(1.02);
+        }
+        .description {
+            display: none;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #555;
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .description.show {
+            display: block;
+            max-height: 100px; /* Adjust based on content */
+            opacity: 1;
+        }
+        strong {
+            color: #2980b9;
+        }
+        span {
+            float: right;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Programming Languages and Their Authors</h1>
+        <ul>
+            <li tabindex="0" onclick="toggleDescription('javaDesc')">
+                <strong>Java</strong><span>James Gosling</span>
+                <div id="javaDesc" class="description">Java is a high-level, class-based, object-oriented programming language designed to have as few implementation dependencies as possible.</div>
+            </li>
+            <li tabindex="0" onclick="toggleDescription('cDesc')">
+                <strong>C</strong><span>Dennis Ritchie</span>
+                <div id="cDesc" class="description">C is a general-purpose programming language that provides low-level access to memory and is widely used for system programming.</div>
+            </li>
+            <li tabindex="0" onclick="toggleDescription('cppDesc')">
+                <strong>C++</strong><span>Bjarne Stroustrup</span>
+                <div id="cppDesc" class="description">C++ is an extension of C that includes object-oriented features, making it a popular choice for software development.</div>
+            </li>
+            <li tabindex="0" onclick="toggleDescription('pythonDesc')">
+                <strong>Python</strong><span>Guido van Rossum</span>
+                <div id="pythonDesc" class="description">Python is a high-level programming language known for its readability and simplicity, widely used in web development, data science, and automation.</div>
+            </li>
+            <li tabindex="0" onclick="toggleDescription('jsDesc')">
+                <strong>JavaScript</strong><span>Brendan Eich</span>
+                <div id="jsDesc" class="description">JavaScript is a versatile scripting language primarily used to create interactive effects within web browsers.</div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleDescription(id) {
+            const desc = document.getElementById(id);
+            desc.classList.toggle("show");
+        }
+    </script>
+</body>
+</html>
